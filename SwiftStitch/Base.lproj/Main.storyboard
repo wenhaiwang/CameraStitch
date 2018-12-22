@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="urL-eo-n9I">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--图片拼接-->
+        <scene sceneID="DDb-Qq-Bof">
+            <objects>
+                <viewController title="图片拼接" id="pt4-QP-YJ3" customClass="CVcameraVC" customModule="CVcameraVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UI1-yx-pkk"/>
+                        <viewControllerLayoutGuide type="bottom" id="J3V-P8-bKp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pc9-LC-gX8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全景拍照,因为苹果没有开放相应的API,所以我们只能自己想办法,本工程给大家一个 拍照并实时拼接的demo   ( 注意: 每次拍照 都要于前一张图片有最少30%的重合度--&gt;即两张图片要有相同的景象)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-Vl-Mcn">
+                                <rect key="frame" x="15" y="283" width="345" height="101.5"/>
+                                <color key="tintColor" red="1" green="0.2782297607656975" blue="0.22724646234802504" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.2782297608" blue="0.22724646230000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umC-wa-ScE">
+                                <rect key="frame" x="87" y="122" width="199" height="39"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="TVA-zX-JTH"/>
+                                </constraints>
+                                <state key="normal" title="开始咱们的表演 --&gt;">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="HbT-RC-5C4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MBg-Vl-Mcn" secondAttribute="trailing" constant="15" id="1ME-W9-9iM"/>
+                            <constraint firstItem="umC-wa-ScE" firstAttribute="leading" secondItem="Pc9-LC-gX8" secondAttribute="leadingMargin" constant="71" id="S58-0R-qAm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="umC-wa-ScE" secondAttribute="trailing" constant="73" id="ZRm-zB-bgx"/>
+                            <constraint firstItem="umC-wa-ScE" firstAttribute="top" secondItem="UI1-yx-pkk" secondAttribute="bottom" constant="58" id="oZN-VD-vra"/>
+                            <constraint firstItem="MBg-Vl-Mcn" firstAttribute="leading" secondItem="Pc9-LC-gX8" secondAttribute="leading" constant="15" id="tvY-Dy-Jnu"/>
+                            <constraint firstItem="MBg-Vl-Mcn" firstAttribute="centerY" secondItem="Pc9-LC-gX8" secondAttribute="centerY" id="xMQ-iQ-eMk"/>
+                            <constraint firstItem="MBg-Vl-Mcn" firstAttribute="centerX" secondItem="Pc9-LC-gX8" secondAttribute="centerX" id="zmI-Xt-BQ5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="实时拼图" id="427-vh-rS7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cca-iR-zss" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298.39999999999998" y="60.719640179910051"/>
+        </scene>
+        <!--拼图展示-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CVViewController" id="BYZ-38-t0r" customClass="CVViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-ht-xfb">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="照片具体细节,请查看手机相册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXw-BD-DIH">
+                                <rect key="frame" x="10" y="569" width="109" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="1" green="0.2782297608" blue="0.22724646230000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-XX-KE7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="497"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="x27-tN-VDz"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gXw-BD-DIH" firstAttribute="top" secondItem="UvU-XX-KE7" secondAttribute="bottom" constant="8" id="6ZX-ti-hPL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UvU-XX-KE7" secondAttribute="bottom" constant="106" id="8Hf-lt-uot"/>
+                            <constraint firstItem="UvU-XX-KE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EbT-43-RTy"/>
+                            <constraint firstItem="gXw-BD-DIH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="MpJ-cn-VIs"/>
+                            <constraint firstItem="UvU-XX-KE7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="dex-vL-KbJ"/>
+                            <constraint firstAttribute="centerX" secondItem="3AV-ht-xfb" secondAttribute="centerX" id="lbN-sm-0JA"/>
+                            <constraint firstAttribute="centerY" secondItem="3AV-ht-xfb" secondAttribute="centerY" id="oi5-Wh-C2H"/>
+                            <constraint firstAttribute="trailing" secondItem="UvU-XX-KE7" secondAttribute="trailing" id="t8e-J0-zvh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="拼图展示" id="sd6-3C-0gy"/>
+                    <connections>
+                        <outlet property="scrollView" destination="UvU-XX-KE7" id="bTl-bj-Mm2"/>
+                        <outlet property="spinner" destination="3AV-ht-xfb" id="4gh-TD-r1H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.79999999999995" y="60.719640179910051"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eAB-cR-6Nw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="urL-eo-n9I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6FI-pJ-RM1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pt4-QP-YJ3" kind="relationship" relationship="rootViewController" id="zU2-Aw-LgG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKD-cz-R1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1071" y="61"/>
+        </scene>
+    </scenes>
+</document>
